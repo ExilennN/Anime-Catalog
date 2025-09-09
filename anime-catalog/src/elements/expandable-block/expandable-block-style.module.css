@@ -1,0 +1,54 @@
+.blockWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+.blockCaption {
+  background-color: var(--accent);
+  padding: 10px 16px;
+  color: var(--background);
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: border-radius 160ms ease;
+}
+
+.openTop {
+  border-radius: 10px 10px 0 0;
+}
+
+.rounded {
+  border-radius: 10px;
+}
+
+.toggleIcon {
+  display: inline-block;
+  transition: transform 260ms ease;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.rotated {
+  transform: rotate(45deg);
+}
+
+.blockContent {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 300ms cubic-bezier(.2,.8,.2,1);
+  will-change: max-height;
+}
+
+.blockContent.open {
+  max-height: 1200px;
+}
+
+.blockText {
+  background-color: var(--secondary-background);
+  padding: 18px 22px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
