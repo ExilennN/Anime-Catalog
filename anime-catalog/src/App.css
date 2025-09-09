@@ -1,18 +1,29 @@
 
 .app{
-  background-color: var(--background);
-  color: var(--text-primary);
+    background-color: var(--background);
+    color: var(--text-primary);
+    font-family: 'Open Sans', sans-serif;
 }
 
 :root {
-  --background: black;
-  --text-primary: white;
-  --text-secondary: grey;
-  --accent: darkred;
-}
-[data-theme='light'] {
-   --background: white;
+  --background: white;
+  --header-background: #57575794;
+  --secondary-background: #57575794;
   --text-primary: black;
   --text-secondary: royalblue;
-  --accent: purple;
+  --accent: #bbff00;
 }
+[data-theme='dark'] {
+  --background: #000000;
+  --header-background: #3d3d3d;
+  --secondary-background: #323232;
+  --text-primary: white;
+  --text-secondary: grey;
+  --accent: #bbff00;
+}
+
+@font-face {
+  font-family: "Karasha";
+  src: local("Karasha"), url(./fonts/Karasha.ttf), format("ttf");
+}
+

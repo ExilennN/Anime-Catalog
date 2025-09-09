@@ -1,26 +1,26 @@
-import React, {useState, useEffect} from "react";
-import useLocalStorage from "use-local-storage";
-import Home from "./pages/home";
-
+import React, {useState, useEffect, useContext} from "react";
+import {BrowserRouter, Routes, Route} from "react-router";
+import { ThemeProvider } from "./elements/theme-context/theme-context";
+import { AnimeDataProvider} from "./elements/anime-data-context/anime-data-context";
 import './App.css';
 
+import Home from "./pages/home";
+import Catalog from "./pages/catalog";
+import AnimePage from "./pages/anime-page";
 
-function App() {
-
-  const currentTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const [theme, setTheme] = useLocalStorage('theme', currentTheme ? 'dark' : 'light');
-
-  const switchTheme = () =>{
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-  }
-
+function App() {  
   return (
-    <div className="app" data-theme={theme}>
-      <Home></Home>
-      <span>Change theme</span>
-      <button onClick={switchTheme}>Switch to {theme === "light" ? "Dark" : "Light"} theme</button>
-    </div>
+    <ThemeProvider>
+      <AnimeDataProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home/>}/>
+            <Route path="/anime" element={<Catalog/>}/>
+            <Route path="/anime/:id/:name" element={<AnimePage/>}/>
+          </Routes>
+        </BrowserRouter>
+      </AnimeDataProvider>
+    </ThemeProvider> 
   );
 }
 
