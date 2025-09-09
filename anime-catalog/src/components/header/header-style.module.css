@@ -1,0 +1,21 @@
+.headerMain{
+   background-color: var(--header-background);
+   height: 60px;
+   
+}
+
+.headerWrapper{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   align-items: center;
+}
+
+.captionName{
+   margin-left: 20px;
+   font-size: 40px;
+   font-family: "Karasha";
+   color: var(--accent);
+   cursor: pointer;
+   text-decoration: none;  
+}

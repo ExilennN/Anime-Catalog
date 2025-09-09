@@ -1,0 +1,18 @@
+.animeWrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.animeInnerWrapper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filtersNav{
+    display: flex;
+    flex-direction: row;
+    background-color: #272727;
+    height: 40px;
+}
